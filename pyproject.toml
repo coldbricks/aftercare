@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aftercare"
+version = "0.1.0"
+description = "Teardown orchestration: reverse-order cleanup with success logging."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+  { name = "Coldbricks", email = "coldbricks@gmail.com" },
+]
+keywords = ['teardown', 'cleanup', 'exit-stack', 'lifecycle']
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/coldbricks/aftercare"
+Repository = "https://github.com/coldbricks/aftercare"
+Issues = "https://github.com/coldbricks/aftercare/issues"
+
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.8", "mypy>=1.8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+packages = ["aftercare"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aftercare"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src",
+  "/README.md",
+  "/LICENSE",
+]
