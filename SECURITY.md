@@ -1,6 +1,6 @@
 # Security Policy
 
-**Security Maintainer:** David Lombardo ([@coldbricks](https://github.com/coldbricks) · coldbricks@gmail.com)
+**Security Maintainer:** David Lombardo ([@coldbricks](https://github.com/coldbricks) | coldbricks@gmail.com)
 
 ## Supported versions
 
